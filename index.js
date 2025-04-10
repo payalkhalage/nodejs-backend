@@ -3,10 +3,13 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const User = require('./models/User.js')
+const productRoutes = require('./routes/productRoutes.js')
+
 
 const server = express()
 server.use(cors())
 server.use(bodyParser.json())
+server.use('/product',productRoutes)
 
 
 mongoose.connect('mongodb+srv://payal:Payal%400403@leadsoft.uwjlhau.mongodb.net/?retryWrites=true&w=majority&appName=leadSoft').then(() =>
